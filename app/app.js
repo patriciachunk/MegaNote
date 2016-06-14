@@ -1,6 +1,5 @@
 (function() {
   var app = angular.module('meganote', [
-    'ui.router'
     'ui.router',
     'meganote.notes'
   ]);
