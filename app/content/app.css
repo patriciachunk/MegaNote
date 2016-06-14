@@ -45,7 +45,7 @@ i.fa-trash-o {
 input#note_title {
   border: none;
   font-size: 200%;
-   font-family: Merriweather;
+  font-family: Merriweather;
   color: #FE5F55;
   font-weight: 300;
   width: 100%; }

@@ -6,7 +6,6 @@
 
   function config($urlRouterProvider) {
       $urlRouterProvider.otherwise('/notes');
-    $urlRouterProvider.otherwise('/notes');
 
   }
 
