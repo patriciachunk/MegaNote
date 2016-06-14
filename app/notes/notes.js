@@ -1,9 +1,11 @@
-angular.module('meganote.notes', [
-   'ui.router'
- ])
+(function() {
+angular.module('meganote.notes', ['ui.router'])
+  .config(notesConfig)
+  .controller('NotesController', NotesController);
 
- .config(function($stateProvider) {
-   $stateProvider
+  notesConfig.$inject = ['$stateProvider'];
+  function notesConfig(z) {
+   z
 
    .state('notes', {
        url: '/notes',
@@ -15,7 +17,17 @@ angular.module('meganote.notes', [
       url: '/:noteId',
       templateUrl: 'notes/notes-form.html'
      });
- })
+ }
 
-.controller('NotesController', function() {
- });
+ NotesController.$inject = ['$state', '$scope'];
+ function NotesController($state, $scope) {
+   $state.go('notes.form')
+    $scope.notes = [];
+    $scope.note = { title: '', body: '' };
+
+    $scope.save = function() {
+      $scope.notes.push($scope.note);
+      $scope.note = { title: '', body: '' };
+    }
+ }
+ }());
